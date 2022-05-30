@@ -14,11 +14,12 @@ public class Action {
 	Integer assists;
 	Integer totalFoulsConceded;
 	Integer offsides;
+	double efficenza;
 	
 	public Action(Integer playerID, Integer matchID, Integer teamID, Integer starts, Integer goals, Integer timePlayed,
 			Integer redCards, Integer yellowCards, Integer totalSuccessfulPassesAll, Integer totalUnsuccessfulPassesAll,
 			Integer assists, Integer totalFoulsConceded, Integer offsides) {
-		super();
+
 		this.playerID = playerID;
 		this.matchID = matchID;
 		this.teamID = teamID;
@@ -35,6 +36,11 @@ public class Action {
 	}
 	
 	
+	public double getEfficenza() {
+		efficenza = ((this.totalSuccessfulPassesAll + this.assists)/this.timePlayed);
+		return efficenza;
+	}
+
 	public Integer getPlayerID() {
 		return playerID;
 	}
@@ -44,6 +50,7 @@ public class Action {
 	public Integer getMatchID() {
 		return matchID;
 	}
+	
 	public void setMatchID(Integer matchID) {
 		this.matchID = matchID;
 	}
